@@ -26,6 +26,13 @@ def check_matches_to_remove_under_number_of_remaining_matches():
         matches_to_remove = int(input(MESSAGE))
 
 
+def game_is_finished():
+    global is_game_finished
+    if (number_of_remaining_matches == 0):
+        print("You lose")
+        is_game_finished = True
+
+
 # ========================================================
 #                         main
 # ========================================================
@@ -48,6 +55,8 @@ if __name__ == '__main__':
             print("Player 1's turn")
             turn_of_the_gamer()
             check_matches_to_remove_under_number_of_remaining_matches()
+            game_is_finished()
+
 
 
 
