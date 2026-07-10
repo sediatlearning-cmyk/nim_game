@@ -19,6 +19,13 @@ def turn_of_the_gamer():
         is_turn_finished = True
 
 
+def check_matches_to_remove_under_number_of_remaining_matches():
+    global matches_to_remove
+    while matches_to_remove > number_of_remaining_matches:
+        print("You cannot remove more matches than there are.")
+        matches_to_remove = int(input(MESSAGE))
+
+
 # ========================================================
 #                         main
 # ========================================================
@@ -40,7 +47,8 @@ if __name__ == '__main__':
         if gamer_start == gamer1_name:  # tour du joueur 1
             print("Player 1's turn")
             turn_of_the_gamer()
-            
+            check_matches_to_remove_under_number_of_remaining_matches()
+
 
 
 
